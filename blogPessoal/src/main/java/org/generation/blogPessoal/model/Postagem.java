@@ -17,20 +17,20 @@ import javax.validation.constraints.Size;
 
 public class Postagem {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id //Chave primária
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //Auto-incremento
 	private long id;
 	
-	@NotNull
-	@Size(min = 5, max = 100)
+	@NotNull(message = "O atributo título é obrigatório!")
+	@Size(min = 5, max = 100, message = "O atributo titulo deve conter no mínimo 5 e no máximo 100 caracteres")
 	private String titulo;
 	
-	@NotNull
-	@Size(min = 10, max = 500)
+	@NotNull(message = "O atributo texto é obrigatório")
+	@Size(min = 10, max = 500, message = "O atributo texto deve conter no mínimo 10 e no máximo 500 caracteres")
 	private String texto;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date date = new java.sql.Date(System.currentTimeMillis());
+	private Date data = new java.sql.Date(System.currentTimeMillis());
 
 	public long getId() {
 		return id;
@@ -57,11 +57,11 @@ public class Postagem {
 	}
 
 	public Date getDate() {
-		return date;
+		return data;
 	}
 
 	public void setDate(Date date) {
-		this.date = date;
+		this.data = date;
 	}
 	
 	
