@@ -11,7 +11,7 @@ public class HelloWObjetivos {
 	@GetMapping
 	public String objetivos() {
 		return "Objetivos de aprendizado para a semana: Revisar o conteúdo de Banco de Dados e de Java"
-				+ "\n\nFazendo exercício para fixar o aprendizado";
+				+ "<br> Fazendo exercício para fixar o aprendizado";
 	}
 
 }
