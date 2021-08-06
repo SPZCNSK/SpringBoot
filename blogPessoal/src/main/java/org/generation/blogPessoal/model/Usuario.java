@@ -1,5 +1,7 @@
 package org.generation.blogPessoal.model;
 
+import java.time.LocalDate;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 //criar atributo private long id na classe UsuarioLogin
 // na classe UsuarioService -> usuarioLogin.get().setId(usuario.get().getId());
@@ -29,6 +33,11 @@ public class Usuario {
 	@NotNull
 	@Size(min = 5, max = 100)
 	private String senha;
+	
+	@Column(name = "datanascimento")
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate dataNascimento;
+	
 	
 	public long getId() {
 		return id;
@@ -62,4 +71,12 @@ public class Usuario {
 		this.senha = senha;
 	}
 
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+	
 }
