@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioController {
 	
-	//metodo de cnexão com a class Usuariorepository
+	//metodo de conexão com a class Usuariorepository
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
